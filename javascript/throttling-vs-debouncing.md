@@ -10,7 +10,7 @@
 
 leading call/trailing call은 각각 처음/마지막 리퀘스트에 대한 반응 여부를 지정한다.
 
-```
+```javascript
 var throttle = function(func, wait, leading, trailing) {
 	var context, args, result;
 	var timeout = null;
@@ -60,7 +60,7 @@ var throttle = function(func, wait, leading, trailing) {
 
 trailing call과 leading call 각각의 동작 방식.
 
-```
+```javascript
 debounce = function(func, wait, immediate) {
 	var timeout, args, context, timestamp, result;
 

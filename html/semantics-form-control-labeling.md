@@ -1,5 +1,7 @@
 # Semantics: form control labeling
 
+### Explicit/Implicit Labeling
+
 폼컨트롤에 `<label>`을 붙일 때의 보편적인 마크업은 이렇다.
 
 ```html
@@ -24,6 +26,41 @@
 
 이 방식에 대한 반대도 많은데, 나처럼 `label > input`의 의존관계가 시맨틱하지 않다고 생각하는 사람들도 있고 Web Accessibility를 고려하면 써선 안된다는 의견도 있다. 2007년 이전에 나온 스크린 리더는 암묵적 레이블을 제대로 읽지 못한다고 한다.
 또한 모바일 사파리를 비롯한 일부 브라우저에서는 event propagation 우선순위 판정에 문제가 있다. 이 방식으로 구현하면 parent인 `<label>`의 이벤트 판정이 child인 `<input>`보다 무조건 우선하는 것 같은데, 이메일이나 연락처 등을 복수의 필드로 나누어 구현하는 등의 경우 어떤 필드를 클릭해도 전부 첫 번째 필드로 포커스가 가게 된다.
+
+<br><br>
+
+### Placeholder vs. Label
+
+인풋의 ``placeholder`` 어트리뷰트를 ``<label>``처럼 쓰면(= placeholder visual pattern) 안된다. ``placeholder``는 말 그대로 '올바른 입력 예시'이기 때문. 따라서 'Name' 레이블이 달린 입력창에 'John'같은 플레이스홀더 텍스트를 넣는 것이 시맨틱한 마크업이다.
+
+로그인처럼 너무 간단하고 정형화된 폼이라서 비주얼 패턴을 꼭 써야 한다면, 그냥 ``<label>``을 쓰되 포지션 조정해서 플레이스홀더처럼 보이게 만들면 된다. 뭐 이렇게.
+
+```html
+<form>
+
+  <div>
+    <input type="text" id="first_name" name="first_name">
+    <label for="first_name">First Name</label>
+  </div>
+  
+  ...
+  
+</form>
+```
+
+```css
+form > div {
+  position: relative;
+}
+  
+form > div > label {
+  opacity: 0.3;
+  position: absolute;
+  top: 22px;
+  left: 20px;
+}
+```
+
 
 ### Reference:
 

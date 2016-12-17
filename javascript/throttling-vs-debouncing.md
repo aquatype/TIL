@@ -11,6 +11,11 @@
 leading call/trailing call은 각각 처음/마지막 리퀘스트에 대한 반응 여부를 지정한다.
 
 ```javascript
+var timestamp = Date.now || function() {
+	return new Date().getTime();
+};
+
+
 var throttle = function(func, wait, leading, trailing) {
 	var context, args, result;
 	var timeout = null;
@@ -61,11 +66,11 @@ var throttle = function(func, wait, leading, trailing) {
 trailing call과 leading call 각각의 동작 방식.
 
 ```javascript
-debounce = function(func, wait, immediate) {
-	var timeout, args, context, timestamp, result;
+var debounce = function(func, wait, immediate) {
+	var timeout, args, context, now, result;
 
 	var later = function() {
-		var last = timestamp() - timestamp;
+		var last = timestamp() - now;
 
 		if (last < wait && last >= 0) {
 			timeout = setTimeout(later, wait - last);
@@ -82,7 +87,7 @@ debounce = function(func, wait, immediate) {
 	return function() {
 		context = this;
 		args = arguments;
-		timestamp = timestamp();
+		now = timestamp();
 		var callNow = immediate && !timeout;
 		if (!timeout) timeout = setTimeout(later, wait);
 		if (callNow) {

@@ -6,12 +6,11 @@
 | list [], tuple () | array      |
 | str, unicode      | string     |
 | int, long, float  | number     |
-| True, False       | true, fals |
+| True, False       | true, false |
 | None              | null       |
 
 ### Reference:
 
  * [Python Documentation]
- * [CodePen]
 
 [Python Documentation]:https://docs.python.org/3/library/json.html

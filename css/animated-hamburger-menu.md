@@ -15,8 +15,8 @@ SCSS
 a.hamburger {
   position: relative;
   display: inline-block;
-  width: 25px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
 
   span,
   &:before,
@@ -32,16 +32,16 @@ a.hamburger {
 
   &:before {
     content: '';
-    top: 5px;
+    top: 2px;
   }
 
   span {
-    top: 13px;
+    top: calc(50% - 1px);
   }
 
   &:after {
     content: '';
-    top: 21px;
+    bottom: 2px;
   }
 }
 
@@ -52,14 +52,15 @@ a.hamburger.expanded {
 
   &:before {
     transform: rotate(45deg);
-    top: 15px;
+    top: calc(50% - 1px);
     left: -2px;
     right: -2px;
   }
 
   &:after {
     transform: rotate(-45deg);
-    top: 15px;
+    top: calc(50% - 1px);
+    bottom: initial;
     left: -2px;
     right: -2px;
   }

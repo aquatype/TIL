@@ -153,10 +153,10 @@ length: 20%나 5rem, 100px 등 모든 길이 단위 사용 가능
  * [A Guide To Flexbox]
  * [Codrops CSS Reference: Flexbox]
 
-[flex-wrap]:flex-flex-wrap.png
-[justify-content]:flex-justify-content.png
-[align-items]:flex-align-items.png
-[align-content]:flex-align-content.png
+[flex-wrap]:../images/flex-flex-wrap.png
+[justify-content]:../images/flex-justify-content.png
+[align-items]:../images/flex-align-items.png
+[align-content]:../images/flex-align-content.png
 [W3C Specifications]:https://www.w3.org/TR/css-flexbox-1/
 [A Guide To Flexbox]:https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 [Codrops CSS Reference: Flexbox]:https://tympanus.net/codrops/css_reference/flexbox/

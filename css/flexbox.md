@@ -34,6 +34,8 @@ column-reverse: 아래에서 위로
 */
 ```
 
+  ![](../images/flex-flex-direction.png | width=50%)
+
 
 2. 플렉스박스는 기본적으로 1차원 정렬이기 때문에 아이템 크기를 강제로 줄여서라도 한 줄로 표시하는데, `flex-wrap` 속성을 이용해서 오버플로우 랩핑을 지정할 수 있다.
 
@@ -48,7 +50,7 @@ wrap-reverse: 여러 줄로, 아래에서 위로 처리
 */
 ```
 
-  <img src='../images/flex-flex-wrap.png' style='max-width: 50%'>
+  ![](../images/flex-flex-wrap.png | width=50%)
 
 
 3. `flex-direction`과 `flex-wrap` 두 가지를 합쳐서 `flex-flow` 숏핸드 프로퍼티로 기술할 수 있다.
@@ -70,7 +72,7 @@ space-evenly: 모든 아이템이 등간격으로 배치됨. 다만 아직 미�
 */
 ```
 
-  <img src='../images/flex-justify-content.png' style='max-width: 50%'>
+  ![](../images/flex-justify-content.png | width=50%)
 
 #### 크로스 액시스
 
@@ -86,7 +88,7 @@ baseline: 아이템들의 베이스라인에 맞추어 정렬
 */
 ```
 
-  <img src='../images/flex-align-items.png' style='max-width: 50%'>
+  ![](../images/flex-align-items.png | width=50%)
 
 
 
@@ -99,8 +101,7 @@ baseline: 아이템들의 베이스라인에 맞추어 정렬
 }
 ```
 
-  <img src='../images/flex-align-content.png' style='max-width: 50%'>
-
+  ![](../images/flex-align-content.png | width=50%)
 
 
 ### 플렉스 아이템

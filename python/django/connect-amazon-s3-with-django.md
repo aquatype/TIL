@@ -41,7 +41,7 @@ INSTALLED_APPS = [
 ]
 ```
 
-이제 아래와 같이 `boto3`에서 사용할 설정 상수들을 선언해준다.
+아래와 같이 `boto3`에서 사용할 설정 상수들도 선언해준다.
 
 ```python
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
@@ -53,7 +53,7 @@ AWS_S3_OBJECT_PARAMETERS = {
 }
 ```
 
-이제 아래와 같이 스태틱 파일 디렉토리 설정을 해주면 된다.
+마지막으로 아래와 같이 스태틱 파일 디렉토리 설정을 해주면 된다.
 
 ```python
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'  # DEFAULT_FILE_STORAGE 를 설정했다면 필수는 아님
@@ -66,7 +66,7 @@ STATICFILES_DIRS = [
 
 ### 5. 사용하기
 
-평소처럼 `$ python3 manage.py collectstatic` 으로 스태틱 파일 디플로이를 실행하면, `boto3`가 알아서 파일들을 S3 버킷으로 업로드한다. 웹서버 자체에서 디플로이하는 것보다는 당연히 좀 느리지만 그게 문제는 아니잖아요?  
+평소처럼 `$ python3 manage.py collectstatic` 으로 스태틱 파일 디플로이를 실행하면, `boto3`가 알아서 파일들을 S3 버킷으로 업로드한다. 웹서버 자체에서 디플로이하는 것보다는 당연히 좀 느리므로 인내심을 갖고 기다리도록 하자.
 
 템플릿에서 사용할 때에는 아래처럼 내장 static 모듈을 사용하여 에셋을 불러오면 주소를 알아서 맞춰준다.
 

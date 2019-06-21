@@ -59,11 +59,11 @@
 
 ```python
 class Data(object):
-	def __str__(self):
-		return 'str'
+    def __str__(self):
+        return 'str'
 
-	def __repr__(self):
-		return 'repr'
+    def __repr__(self):
+        return 'repr'
 
 # `str` 호출
 >>> '{!s}'.format(Data())
@@ -78,15 +78,11 @@ class Data(object):
 
 ```python
 class HAL9000(object):
-	def __format__(self, format):
-		if format == 'open-the-pod-bay-doors':
-			return "I'm afraid I can't do that."
-		return 'HAL 9000'
+    def __format__(self, format):
+        if format == 'open-the-pod-bay-doors':
+            return "I'm afraid I can't do that."
+        return 'HAL 9000'
 
 >>> '{:open-the-pod-bay-door}'.format(HAL9000())
 "I'm afraid I can't do that."
-
-# `repr` 호출
->>> '{!r}'.format(Data)
-'repr'
 ```

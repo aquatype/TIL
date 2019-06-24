@@ -44,11 +44,11 @@ https://www.ssllabs.com/ssltest/analyze.html?d={도메인명} 으로 접속해�
 $ sudo crontab -e
 ```
 
-두 달에 한 번씩 스크립트가 실행되게 스케줄을 추가.
+`certbot renew` 옵션으로 실행하면 인증서 상태를 체크한 다음, 만료일이 30일 이내라면 자동으로 최초 인증서 생성 시의 크레덴셜을 이용하여 갱신을 시도한다. 매 주 스크립트가 실행되게 스케줄을 추가.
 
 ```
-0 3 1 */2 * /usr/local/certbot/certbot-auto certonly --apache --renew-by-default --apache -d domain.com -d www.domain.com >> /var/log/example.com-renew.log 2>&1
-1 3 1 */2 * sudo service apache2 reload
+0 3 * * 6 /usr/local/certbot/certbot-auto renew
+5 3 * * 6 sudo service apache2 reload
 ```
 
 혹시 모르니 갱신된 인증서도 잘 백업해 두자.

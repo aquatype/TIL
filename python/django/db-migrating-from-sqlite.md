@@ -31,8 +31,12 @@ $ python3 manage.py migrate
 $ python manage.py loaddata db.json
 ```
 
----
+혹은 아래처럼 특정 앱의 특정 모델 데이터만 덤프를 할 수도 있다.
+이 편이 Content Type을 날리지 않아도 되므로 좀 더 편하다.
 
-알겠지? 제발 디비 설정 제대로 하자
+```
+$ python3 manage.py dumpdata myapp1 myapp2.my_model > db.json
+```
+
 
 [Pgloader]:https://pgloader.io

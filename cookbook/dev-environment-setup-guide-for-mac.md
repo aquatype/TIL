@@ -15,41 +15,35 @@ $ sudo rm -rf "/Applications/Python 2.7"
 $ brew prune
 ```
 
-3. Python 3, virtualenv 설치
+3. Pyenv 설치
 ```
-$ brew install python
-$ pip3 install virtualenv
-$ virtualenv ~/venv/
-```
+$ brew install pyenv
 
-(update) 파이썬이 버전업되면서 홈브류 포뮬라를 통해서는 3.7.x 버전밖에 설치할 수 없는데, 일단 임시로 아래처럼 해서 다운그레이드할 수 있다.
+# 환경변수 설정
+$ echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bash_profile
+$ echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bash_profile
+$ echo 'eval "$(pyenv init -)"' >> ~/.bash_profile
 
-```
-# 일단 디펜던시를 전부 포함한 최신 버전(3.7.x)의 파이썬을 설치
-$ brew install python
+# 원하는 파이썬 버전 설치
+$ pyenv install 3.8.0
 
-# 다운그레이드를 위해 심볼릭 언링크
-$ brew unlink python
-
-# 원하는 버전을 디펜던시 제외하고 수동 설치 (아래는 3.6.5 포뮬라 주소임)
-$ brew install --ignore-dependencies https://raw.githubusercontent.com/Homebrew/homebrew-core/f2a764ef944b1080be64bd88dca9a1d80130c558/Formula/python.rb
+# 해당 버전을 글로벌 버전으로 지정
+$ pyenv global 3.8.0
 ```
 
-4. [Postgres.app] 설치  
+4.  virtualenv 설정
+```
+$ python3 -m venv /path/to/new/virtual/environment
+```
+
+5. [Postgres.app] 설치  
 맥에서 개발용으로 쓰기엔 패키지보다는 이 쪽이 훨씬 연동이 간편함
 
-5. [Github Desktop] 설치, 리포 클론, 디펜던시 설치  
+6. [Github Desktop] 설치, 리포 클론, 디펜던시 설치  
 프로젝트 내 requirements.txt 참조
 ```
 pip install --upgrade pip3
 pip install -r requirements.txt
-```
-
-6. 태스크 자동화용 nodejs, npm 스크립트 용 디펜던시 설치  
-프로젝트 내 package.json 참조
-```
-$ brew install node
-$ npm install -g onchange concat node-sass uglifycss postcss-cli autoprefixer jshint
 ```
 
 7. [Atom] 및 패키지 설치

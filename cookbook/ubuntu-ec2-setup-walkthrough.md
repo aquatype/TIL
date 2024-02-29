@@ -31,6 +31,13 @@ psql > \password app
 
 sudo -u postgres createdb {{DBNAME}}
 
+# 외부 접속 설정
+$ vim /etc/postgresql/14/main/postgresql.conf
+# listen_addresses 주석해제 후 접속할 IP로 변경, '*'
+$ vim /etc/postgresql/14/main/pg_hba.conf
+# IPv4 local connections 설정 찾아서 접속 IP 설정
+host    all             all             0.0.0.0/0            md5 
+
 # certbot
 sudo a2enmod ssl
 cd /usr/local && sudo git clone https://github.com/certbot/certbot
